@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 1px;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #555;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar:hover {
+    color: #fff;
+    background-color: #b8b8b828;
+    text-decoration: underline;
+}
+
+.image_logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Slideshow styles */
+.slideshow-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Behind the content */
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    padding: 80px 16px; /* Adjust padding to make content visible under the navbar */
+    text-align: center;
+    color: white;
+}
+
+/* Opaque navbar styles */
+.opaque-navbar .w3-top {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+/* Contact section styles */
+#contact {
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact_Button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact_Button:hover {
+    background-color: #45a049;
+}
+
+/* Navbar links for "Sobre Nosotros" and "Contacto" */
+.aboutUs_Link a{
+    text-align: right;
+    margin-top: 0;
+    margin-left: 2px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.contact_Link a{
+    text-align: right;
+    margin-top: 0;
+    margin-left: 2px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.aboutUs:hover a{
+    text-decoration: underline;
+    color: #fff;
+}
+
+.contact:hover a{
+    text-decoration: underline;
+    color: #fff;
+}
