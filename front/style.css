@@ -5,6 +5,11 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+.mySlides{
+    width: 100%;
+    height: 100%;
+}
+
 /* Navbar styles */
 .navbar {
     display: flex;
