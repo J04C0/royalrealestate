@@ -1,7 +1,7 @@
 <?php
 class User
 {
-    public $userNumber;
+    public $username;
     public $mail;
     public $password;
     public $house;
@@ -10,27 +10,27 @@ class User
 
     // Constructor
     public function __construct(
-        $userNumber,
+        $username,
         $mail,
         $password,
         $house,
         $terrain,
         $apartment,
     ) {
-        $this->userNumber = $userNumber;
+        $this->username = $username;
         $this->mail = $mail;
         $this->password = $password;
         $this->house = $house;
         $this->terrain = $terrain;
         $this->apartment = $apartment;
     }
-    public function getUserNumber()
+    public function getUsername()
     {
-        return $this->userNumber;
+        return $this->username;
     }
-    public function setUserNumber($userNumber): self
+    public function setUsername($username): self
     {
-        $this->userNumber = $userNumber;
+        $this->username = $username;
 
         return $this;
     }
