@@ -17,8 +17,16 @@ class Apartment extends Property
                 $commonExpenses,
                 $garage,
                 $disposition,
-                $year
+                $year,
+                $referenceId,
+                $state,
+                $description,
+                $images,
+                $street,
+                $department,
+                $neighborhood
         ) {
+                parent::__construct($referenceId, $state, $description, $images, $street, $department, $neighborhood);
                 $this->dorms = $dorms;
                 $this->baths = $baths;
                 $this->area = $area;
@@ -97,5 +105,19 @@ class Apartment extends Property
                 $this->year = $year;
 
                 return $this;
+        }
+
+        public function toJson()
+        {
+                $data = parent::toJson(); // Include data from the base class
+                $data['dorms'] = $this->dorms;
+                $data['baths'] = $this->baths;
+                $data['area'] = $this->area;
+                $data['commonExpenses'] = $this->commonExpenses;
+                $data['garage'] = $this->garage;
+                $data['disposition'] = $this->disposition;
+                $data['year'] = $this->year;
+
+                return json_encode($data, JSON_PRETTY_PRINT);
         }
 }

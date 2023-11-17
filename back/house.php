@@ -10,6 +10,13 @@ class House extends Property
 
     // Constructor
     public function __construct(
+        $referenceId,
+        $state,
+        $description,
+        $images,
+        $street,
+        $department,
+        $neighborhood,
         $dorms,
         $baths,
         $area,
@@ -17,6 +24,7 @@ class House extends Property
         $garage,
         $year
     ) {
+        parent::__construct($referenceId,$state,$description,$images,$street,$department,$neighborhood); 
         $this->dorms = $dorms;
         $this->baths = $baths;
         $this->area = $area;
@@ -78,5 +86,17 @@ class House extends Property
     {
         $this->year = $year;
         return $this;
+    }
+
+    public function toJson() {
+        $data = parent::toJson(); 
+        $data['dorms'] = $this->dorms;
+        $data['baths'] = $this->baths;
+        $data['area'] = $this->area;
+        $data['totalArea'] = $this->totalArea;
+        $data['garage'] = $this->garage;
+        $data['year'] = $this->year;
+
+        return json_encode($data, JSON_PRETTY_PRINT);
     }
 }

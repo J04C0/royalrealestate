@@ -1,5 +1,4 @@
 <?php
-require_once 'back/Property.php';
 require_once 'back/House.php';
 require_once 'back/Terrain.php';
 require_once 'back/Apartment.php';
@@ -9,12 +8,20 @@ require_once 'back/User.php';
 
 // Create an instance of the House class
 $myHouse = new House(
-$myHouse->referenceId = 'H001',
-$myHouse->dorms = 3,
-$myHouse->baths = 2,
-$myHouse->area = 150,
-$myHouse->totalArea = 200,
-$myHouse->state = 'Available'
+    $myHouse->referenceId = 'H001',
+    $myHouse->state = 'Available',
+    $myHouse->description = 'esta casa ta boena wacho',
+    $myHouse->images = 'despues vemo q onda',
+    $myHouse->street = 'Mones roses',
+    $myHouse->department = 'monte',
+    $myHouse->neighborhood = 'carra',
+    $myHouse->dorms = 3,
+    $myHouse->baths = 2,
+    $myHouse->area = 150,
+    $myHouse->totalArea = 200,
+    $myHouse->garage = true,
+    $myHouse->year = 2013,
+
 );
 // Set other properties...
 

@@ -5,7 +5,7 @@ class Property
         public $state;
         public $description;
         public $images;
-        public $location;
+        public $street;
         public $department;
         public $neighborhood;
 
@@ -15,7 +15,7 @@ class Property
                 $state,
                 $description,
                 $images,
-                $location,
+                $street,
                 $department,
                 $neighborhood
         ) {
@@ -23,7 +23,7 @@ class Property
                 $this->state = $state;
                 $this->description = $description;
                 $this->images = $images;
-                $this->location = $location;
+                $this->street = $street;
                 $this->department = $department;
                 $this->neighborhood = $neighborhood;
         }
@@ -67,13 +67,13 @@ class Property
 
                 return $this;
         }
-        public function getLocation()
+        public function getStreet()
         {
-                return $this->location;
+                return $this->street;
         }
-        public function setLocation($location): self
+        public function setStreet($street): self
         {
-                $this->location = $location;
+                $this->street = $street;
 
                 return $this;
         }
@@ -97,5 +97,22 @@ class Property
 
                 return $this;
         }
-        
+
+        // Convert object data to JSON
+        public function toJson()
+        {
+                $data = [
+                        'referenceId' => $this->referenceId,
+                        'state' => $this->state,
+                        'description' => $this->description,
+                        'images' => $this->images,
+                        'location' => $this->street,
+                        'department' => $this->department,
+                        'neighborhood' => $this->neighborhood,
+                        'type' => static::class,
+                ];
+
+                return json_encode($data, JSON_PRETTY_PRINT);
+        }
+
 }
